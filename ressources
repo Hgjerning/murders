@@ -1,0 +1,104 @@
+# ECHO = False     : No code is shown in the report
+
+
+Creating reports:
+https://rmarkdown.rstudio.com
+https://yihui.name/knitr/
+
+For PDF files:
+install.packages('tinytex')
+tinytex::install_tinytex()
+
+Git & Github:
+* https://www.codecademy.com/learn/learn-git
+* https://guides.github.com/activities/hello-world/
+* http://try.github.io
+* https://happygitwithr.com
+
+Three good reasons:
+1. version control
+  * branches for testing
+  * merging work
+2. Collaboration
+  * pull request
+3. Sharing  
+
+================================================================================================
+Working Directory      Staging Area         Local Repository           Upstream Repository
+   --------->>  Add
+                    -------------->> Commit
+                                           --------------->> Push
+
+   <<<----------------------------------------------------------------Pull ----     
+
+================================================================================================
+
+
+How to start:
+1. Clone an existing repo or
+2. Initiate a new one
+
+=================================================================================================
+1. How to clone:
+=================================================================================================
+
+# open a command line and create a new directory:
+mkdir git-example
+
+# clone a file from github:
+git clone "https://github.com/rairizarry/murders.git"
+
+# creating a file with the word test in:
+echo "test" >> new-file.txt
+echo "temporary" >> tmp.txt
+
+# now we are gong to stage the file in our local repository
+git add new-file.txt
+
+# check the status
+git status
+
+# then committing the new file
+git commit -m "adding a new file"
+
+# Adding another line
+echo "adding a line" >> new-file.txt
+git add new-file.txt
+git commit -m "adding a new line to a new file"
+
+# a simpler way for minor changes
+echo "addng a second line" >> new-file.txt
+git commit -m "minor change to new-file" new-file.txt
+git status
+
+# so what has happened so far
+git log new-file.txt
+
+# Time to puch changes to the upstream github repository
+git push # however you do not have permisson
+git fetch # update the local repo to be like the downstram github repo
+git merge # merge the local repo
+git pull # is both in combination
+
+=================================================================================================
+2. Initialiaze a new one:
+=================================================================================================
+
+# create a new repo on github and copy the link
+https://github.com/Hgjerning/murders.git
+
+# Then we need to create the local repo on our pc (in the location where our project is)
+# 1. First we need to initialize it
+git init
+# This turns it into a git repository and git starts tracking it
+# 2. One is to start moving files into our local repo
+# 3. and to connect the local repo with our GitHub repo. We need to let Git know that it is going to be connected to a # GitHub repository.
+
+git add README.txt
+git commit -m "First commit. Adding README.txt file just to test and get started"
+
+# Then we need to connect the local repo to our github repo
+git remote add origin https://github.com/Hgjerning/murders.git
+
+# Then we are going to push the file from the local repo to our github repåo
+git push
