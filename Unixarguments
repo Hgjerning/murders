@@ -1,0 +1,57 @@
+Advanced Unix: Arguments
+
+rm -r
+# The r stands for "recursive," and the resultis that the files and directories are removed recursively,
+meaning that if you type rm -r directory-name, all files, sub-directories, files in the sub-directories,
+NB: Can't be recovered
+
+-f
+# this is for removing protected files (forced)
+
+rm -rf 
+# you can combine arguments
+
+ls -a
+# shows all files including the hidden ones
+
+ls -l
+# l stands for long
+
+ls -t
+# chronological order
+
+ls -tr
+# reverses the above
+
+ls -lart
+# is all combinations long/all/reverse/chronological
+
+
+# helpfiles for all abbreviations
+man ls
+ls --help
+ls --help | less
+
+ls *.html
+# list all files ending with html
+
+# ? means any character
+rm file-???.html
+# will only remove html files with the above format
+
+
+# Our home directory
+echo $HOME
+
+# All environment variable
+env
+
+# what type is my shell
+echo $SHELL
+
+
+# where is a program
+which git #where is git.exe
+
+# where to look for files
+echo $PATH
